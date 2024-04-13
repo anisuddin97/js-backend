@@ -11,6 +11,20 @@ const connectDB = async() => {
     }
 }
 
-export default connectDB;
 
 connectDB()
+.then(()=>{
+    app.listen(process.env.PORT || 8000, ()=>{
+        console.log(`Server is running at port: ${process.env.PORT}`);
+    })
+    app.on("Error", (error)=> {
+        console.log("Server Listen Error:",error);
+        throw error
+    })
+})
+.catch((error)=> {
+    console.log("MongoDB Connection Failed! :",error);
+})
+
+
+export default connectDB;
