@@ -15,4 +15,13 @@ app.use(express.static("public"))    // if i get any document from user then i w
 app.use(cookieParser())      // then we will able to do CRUD operation on cookie
 
 
+// routes import
+import userRouter from "./routes/user.route.js"  // we can import like this when export will default
+
+// routes declaration
+app.use("/api/v1/users", userRouter)
+
+
+//http://localhost:8080/api/v1/users/register
+
 export { app } 
