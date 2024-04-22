@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 const app = express();
 
 app.use(cors({
-    origin:process.env.CORS_ORIGIN  ,
+    origin:process.env.CORS_ORIGIN ,
     credentials: true
 }))
 
@@ -22,6 +22,6 @@ import userRouter from "./routes/user.route.js"  // we can import like this when
 app.use("/api/v1/users", userRouter)
 
 
-//http://localhost:8080/api/v1/users/register
+//  http://localhost:8080/api/v1/users/register
 
 export { app } 
